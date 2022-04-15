@@ -1,0 +1,21 @@
+section{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.carousel-control-prev-icon{
+    background-image: url(https://cdn-icons-png.flaticon.com/128/860/860790.png);
+}
+.carousel-control-next-icon{
+    background-image: url(https://cdn-icons-png.flaticon.com/128/860/860828.png);
+}
+.carousel-control-next, .carousel-control-prev{
+    width: 20px;
+}
+
+.carousel-control-prev {
+    left: -35px;
+}
+.carousel-control-next {
+    right: -35px;
+}

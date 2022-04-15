@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}AddIngr{% endblock %}
+{% block content %}
+
+<form class="was-validated" method = "POST">
+  <div class="mb-3">
+    <label for="validationTextarea" class="form-label">Название</label>
+    <textarea class="form-control is-invalid" name="name" id="name" placeholder="Необходимо ввести название добавки!" required></textarea>
+    <div class="valid-feedback">
+      Необходимо ввести название добавки!
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="validationTextarea" class="form-label">Что это за покемон?</label>
+    <textarea class="form-control is-invalid" name="what_is_it" id="what_is_it" placeholder="Введи то, что она из себя представляет!" required></textarea>
+    <div class="valid-feedback">
+      Введи то, что она из себя представляет!
+    </div>
+  </div>
+
+  <div align="center">
+    <button type="submit" class="btn btn-primary">Добавить Добавку!</button>
+  </div>
+</form>
+
+
+{% endblock %}

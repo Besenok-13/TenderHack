@@ -1,0 +1,15 @@
+:root{
+    --list:#ffeaec;
+}
+
+
+.list-group-item{
+    background-color: var(--list);
+}
+
+
+.col-3{
+    padding-top: 30px;
+}
+
+

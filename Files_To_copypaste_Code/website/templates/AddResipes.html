@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}Первый путь администратора{% endblock %}
+{% block content %}
+
+<form class="was-validated" method = "POST">
+  <div class="mb-3">
+    <label for="validationTextarea" class="form-label">Название</label>
+    <textarea class="form-control is-invalid" name="name" id="name" placeholder="Введи название рецепта!" required></textarea>
+    <div class="valid-feedback">
+      Необходимо ввести название рецепта
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="validationTextarea" class="form-label">Спопоб приготовления</label>
+    <textarea class="form-control is-invalid" name="stepbystep" id="stepbystep" placeholder="Введи способ приготовления!" required></textarea>
+    <div class="valid-feedback">
+      Введи способ приготовления!
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="validationTextarea" class="form-label">Введи ингридиенты</label>
+    <textarea class="form-control is-invalid" name='ingridients' id="ingridients" placeholder="Введи ингридиенты через пробел!" required></textarea>
+    <div class="valid-feedback">
+      Необходимо ввести ингридиенты
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="validationTextarea" class="form-label">Вставь ссылку на картинку</label>
+    <textarea class="form-control is-invalid" name="image" id="image" placeholder="Вставь ссылку на картинку!" required></textarea>
+    <div class="valid-feedback">
+      Необходимо ввести ссылку на картинку
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="validationTextarea" class="form-label">Введи сложность рецепта</label>
+    <textarea class="form-control is-invalid" name="quantity" id="quantity" placeholder="Введи сложность рецепта!" required></textarea>
+    <div class="valid-feedback">
+      Необходимо ввести сложность рецепта
+    </div>
+  </div>
+
+  <div align="center">
+    <button type="submit" class="btn btn-primary">Добавить рецепт!</button>
+  </div>
+</form>
+
+
+
+{% endblock %}

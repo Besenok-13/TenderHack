@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}VeganResipes{% endblock %}
+{% block content %}
+<h1 align="center">Рецепты для веганов</h1>
+<p></p>
+<p></p>
+<div class="d-grid gap-2 col-6 mx-auto">
+  <a href="/resipes" class="btn btn-primary btn-lg" type="button">Давай вернём всё, как было!</a>
+</div>
+<p></p>
+<p></p>
+<div class="container" align="center">
+  <div class="row row-cols-3">
+    {% for resipe in result_resipes %}
+    <div class="col">
+      <div class="card" style="width: 22rem;">
+        <img src={{resipe.image}} class="card-img-top" alt="" width="200" height="250">
+        <div class="card-body">
+          <h5 class="card-title">{{resipe.name}}</h5>
+          <p class="card-text">
+          {% for ingr in resipe.ingridients_in_resipe %}
+
+            {{ingr.name}}
+
+
+          {% endfor %}
+          </p>
+          <a href="/resipe_preview/{{resipe.id}}" class="btn btn-primary">К {{resipe.name}} !</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{%endblock%}

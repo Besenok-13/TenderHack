@@ -1,0 +1,27 @@
+{% set style = "AddonPreviewStyle.css" %}
+{% extends "base.html" %}
+{% block title %}AddonPreview{% endblock %}
+{% block content %}
+
+<!--
+Пишите ВЕСЬ свой код между block conent! и ebdblock!
+  -->
+
+
+<header>
+  <div class="container" >
+    <div class="row align-items-center">
+      <div class="col-3">
+        <img src="https://artnow.ru/img/1109000/1109233.jpg" class="img-thumbnail" alt="" >
+      </div>
+      <div class="col-9">
+        <h1 class="text-center mb-0">{{addon.name}}</h1>
+        <p>{{addon.what_is_it}}</p>
+      </div>
+    </div>
+  </div>
+</header>
+<a href="/addons_list" class="btn btn-primary">Назад ко всем добавкам!</a>
+
+
+{% endblock %}
