@@ -10,6 +10,13 @@
             "request": "launch",
             "module": "Files_To_copypaste_Code.main",
             "justMyCode": true
+        },
+        {
+            "name": "main",
+            "type": "python",
+            "request": "launch",
+            "module": "Tenderhack.main",
+            "justMyCode": true
         }
     ]
 }
