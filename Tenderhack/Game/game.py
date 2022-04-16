@@ -71,11 +71,13 @@ for i in range(30):
 kt.low("me")
 print(kt.current_price)
 
+
 def generate_pict():
+    import json
+
+    import numpy as np
     import plotly
     import plotly.express as px
-    import numpy as np
-    import json
 
     x = np.arange(0, 5, 0.1)
 
