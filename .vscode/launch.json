@@ -5,13 +5,6 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "File_to_copy.main",
-            "type": "python",
-            "request": "launch",
-            "module": "Files_To_copypaste_Code.main",
-            "justMyCode": true
-        },
-        {
             "name": "main",
             "type": "python",
             "request": "launch",
