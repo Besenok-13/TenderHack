@@ -1,46 +1,18 @@
-class Gamer:
-    def __init__(self, min_cost, products):
-        self.min_cost = min_cost
-        self.products = products
-
-    def check(self, cost):
-        if self.min_cost > cost:
-            return False
-        return True
-
-    def action_out(self):
-        return False
-
-    def action_low(self):
-        return True
-
-
-def game(
-    gamers: list[Gamer], cost: float,
-):
-    to_dell = []
-    for i, gamer in enumerate(gamers):
-        if gamer.check():
-            to_dell.append(i)
-
-    for i in to_dell:
-        gamers.pop(i)
-
-
 class Kot:
     def __init__(self):
         self.current_price = 10000
         self.start_price = 10000
         self.percent = 2
         self.last = 0
-        self.steps = 5
+        self.moves = 1000
         self.isEnded = False
+        self.step = self.start_price * self.percent / 100
 
     def low(self, lst):
         self.last = lst
-        self.steps -= 1
+        self.moves -= 1
         self.current_price -= self.start_price * (self.percent / 100)
-        print("lowed!", self.current_price, self.steps)
+        print(self.last, "lowed!", self.current_price, self.moves)
         return self.current_price
 
     def get_current(self):
@@ -49,9 +21,17 @@ class Kot:
     def get_last(self):
         return self.last
 
+    def isStopped(self):
+        return self.isEnded
+
     def update(self):
-        if self.steps < 1:
+        if self.isEnded:
+            return 0
+        if self.current_price < 0:
             self.stop()
+
+    def imhere():
+        print("imhere")
 
     def stop(self):
         self.isEnded = True
@@ -60,9 +40,33 @@ class Kot:
         print("ENDED!")
 
 
+class Bot:
+    def __init__(self, ID, fl, kt):
+        self.login = ID
+        self.floor = fl * kt.start_price / 100
+        self.timer = 300  # FOR DELAY
+
+    def PRESS_FUCKING_BUTTON(self, kot):
+        kot.low(self.login)
+        kot.update()
+
+    def update(self, kot):
+        if kot.isStopped():
+            return 0
+        curr_price = kot.get_current()
+        next_price = curr_price - kot.step
+        if next_price < self.floor:
+            pass
+        else:
+            self.PRESS_FUCKING_BUTTON(kot)
+
+
 kt = Kot()
-while not kt.isEnded:
-    kt.update()
-    a = int(input())
-    if a > 0:
-        kt.low(a)
+bot1 = Bot("bot N1", 30, kt)
+bot2 = Bot("bot N2", 30, kt)
+for i in range(30):
+    bot1.update(kt)
+    bot2.update(kt)
+    print(kt.current_price)
+kt.low("me")
+print(kt.current_price)
