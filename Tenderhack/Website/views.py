@@ -1,4 +1,8 @@
 from flask import Blueprint, flash, redirect, render_template, request, url_for
+from flask_login import current_user, login_required
+
+from . import db
+from .models import *
 
 views = Blueprint("views", __name__)
 
@@ -6,13 +10,13 @@ views = Blueprint("views", __name__)
 @views.route("/", methods=["GET", "POST"])
 def home():
 
-    return render_template("home.html")
+    return render_template("home.html", user=current_user)
 
 
 @views.route("/game/<int:game_id>/<int:user_id>", methods=["GET", "POST"])
 def game():
 
-    return render_template("game.html")
+    return render_template("game.html", user=current_user)
 
 
 """

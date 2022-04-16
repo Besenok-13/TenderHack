@@ -1,4 +1,6 @@
-# from sklearn.neural_network import MLPClassifier
+from sklearn.neural_network import MLPClassifier
+
+
 # coding=utf-8
 # TheGodEye = MLPClassifier()
 def OneMix():
@@ -61,6 +63,26 @@ def OneMix():
     plt.xlabel("Поколения")
     plt.ylabel("Макс/ср")
     plt.show()
+
+
+def gen_population():
+    import random
+
+    import matplotlib.pyplot as plt
+    import numpy as np
+    from deap import algorithms, base, creator, tools
+
+    ONE_MAX_LENGHT = 100
+    POPULATION_SIZE = 300
+    MAX_GENERATIONS = 50
+    P_CROSSOVER = 0.9
+    P_MUTATION = 0.1
+
+
+GodEye = MLPClassifier(
+    hidden_layer_sizes=(3, 30, 1), solver="lbfgs", activation="logistic"
+)
+GodEye.coefs_ = OneMix()
 
 
 OneMix()
